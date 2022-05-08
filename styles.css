@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('./spurs.png');
+    background-size: 100px;
+    font-family: "Roboto", Helvetica;
+}
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 150px 450px 50px;
+    grid-template-areas:
+    "header header header"
+    "content content content"
+    "footer footer footer";
+}
+
+#header {
+    grid-area: header;
+    border-radius: 20px;
+    margin: 10px;
+    background-color: rgba(255,255,255,0.8);
+    box-shadow: 5px 10px #000;
+    text-align: center;
+}
+
+#main {
+    grid-area: content;
+    display: flex;
+}
+
+#tribute-info {
+    width: 60%;
+    text-align: center;
+    border-radius: 20px;
+    margin: 10px;
+    background-color: rgba(255,255,255,0.8);
+    box-shadow: 5px 10px #000;
+    font-weight: 400;
+}
+
+#img-div {
+    width: 40%;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(255,255,255,0.8);
+    box-shadow: 5px 10px #000;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    justify-content: center;
+}
+#image {
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: inherit;
+}
+#img-caption {
+
+}
+#footer {
+    grid-area: footer;
+    border-radius: 20px;
+    margin: 10px;
+    background-color: rgba(255,255,255,0.5);
+    box-shadow: 5px 10px #000;
+    text-align: center;
+    line-height: 66px;
+}
+
+
+
+
+footer {
+    height: 100%;
+    padding: 10px;
+}
+
+
+@media (max-width: 500px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 150px 1fr 100px;
+        grid-template-areas:
+        "header"
+        "content"
+        "footer";
+    }
+
+    #tribute-info, #img-div {
+        width: 100%;
+    }
+
+    #main {
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 501px ) and (max-width: 950px) {
+
+    .container {
+        grid-template-rows: 150px 1fr 100px;
+    }
+
+}
